@@ -1,5 +1,5 @@
 import { PGlite } from '@electric-sql/pglite';
-import fs from 'fs:node/promises'
+import fs from 'node:fs/promises'
 
 const db = new PGlite();
 
@@ -13,14 +13,14 @@ const db = new PGlite();
             price INTEGER, 
             color TEXT, 
             condition INTEGER,
-            Sold BOOLEAN,   
+            Sold BOOLEAN   
         );
         INSERT INTO cars(brand, model, year, price, color, condition, sold) VALUES
         ('Ford', 'Mustang', 1965, 45000, 'white', 4, false),
-        ('Chevrolet', 'Camaro', 1970, 48000, 'red', 2, false),
+        ('Chevrolet', 'Camaro', 1970, 48000, 'red', 2, false)
         
     `)
-    const sql = await fs.readFile('query.sql', 'utf-8');
+    const sql = await fs.readFile('query.sql', 'utf8');
     const result = await db.query(sql);
 
     console.clear();
