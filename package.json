@@ -1,0 +1,13 @@
+{
+  "name": "intro_to_sql",
+  "version": "1.0.0",
+  "description": "intro to sql project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.2"
+  }
+}
