@@ -62,6 +62,105 @@ SELECT brand, model, color, year FROM cars
 		or the year is between 1960 and 1969
 */
 
-select brand, color, year, price FROM cars 
-	WHERE color = '%red%'
-	OR year BETWEEN 1960 AND 1969;
+/* select brand, model, color, year, price FROM cars 
+	WHERE color LIKE '%red%'
+	OR year BETWEEN 1960 AND 1969; */
+
+
+/*
+	Select brand, model, price and sold from cars
+		filter out any cars which are sold
+		show cars where the brand is none of ('Ford', 'Triumph', 'Chevrolet', 'Dodge')
+		or the price is less than $50000
+*/
+
+
+
+
+/* IN */
+/*
+	Select brand, model, price and sold from cars
+		filter out any cars which are sold
+		show cars where the brand is none of ('Ford', 'Triumph', 'Chevrolet', 'Dodge')
+		or the price is less than $50000
+*/
+/* 
+SELECT brand, model, price, sold FROM cars
+	WHERE (
+		brand NOT IN ('Ford', 'Triumph', 'Chevrolet', 'Dodge')
+		OR price < 50000
+	) AND sold IS FALSE; */
+
+
+-- CHALLENGE ONE
+
+/*
+	Select brand, model, and color from cars
+		where the color is 'red'
+		and the brand is not 'Ferrari'
+		and the car has not been sold
+*/
+
+/* SELECT brand, model, color FROM cars
+WHERE color LIKE '%red%'
+AND brand != 'Ferrari'
+AND SOLD IS false */
+
+/*
+	Select brand, model, and color from cars
+		where the color is not red, blue, or white
+		and the brand is none of: Aston Martin, Bentley or Jaguar
+		and sold is false
+*/
+
+/* SELECT brand, model, color FROM cars
+	WHERE color NOT IN ('red', 'blue', 'white')
+	AND brand NOT IN ('Aston Martin', 'Bentley', 'Jaguar')
+	AND SOLD IS false; */
+
+
+
+
+
+
+/* ORDER BY */
+
+/* CODE 1 */
+/*
+	Select the brand, model and year from the cars table
+		order by the brand
+*/
+
+/* SELECT brand, model, year FROM cars
+	ORDER BY brand;
+CODE 2 */
+/*
+	Select the brand, model and year from the cars table
+		order by the brand descENDING
+*/
+
+/* SELECT brand, model, year FROM cars
+	ORDER BY brand DESC, year; */
+-- CODE 3
+/*
+	Select the brand, model, condition and price from cars
+		order the table by condition in descending order
+		and by price in ascending order
+*/
+
+/* SELECT brand, model, condition, price FROM cars
+	ORDER BY condition DESC, price; */
+
+-- CODE 4
+/*
+		Select the brand, model, condition and price from cars
+		where the car is not sold
+		and the condition is not 5
+		order the table by condition in descending order
+		and by price in ascending order
+*/
+
+/* SELECT brand, model, condition, price FROM cars
+	WHERE sold IS FALSE
+	ORDER BY condition DESC, price;
+ */
